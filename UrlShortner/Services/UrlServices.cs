@@ -23,7 +23,10 @@ namespace UrlShortner.Services
                 return shortLink;
             var response = await _shortUrlRepoesirey.AddLink(link);
             return response;
-
+            if (response is null)
+            {
+                return null;
+            }
         }
 
         public async Task RecordVisit(ShortLinkQuery query)
