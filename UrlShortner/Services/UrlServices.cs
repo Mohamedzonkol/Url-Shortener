@@ -1,6 +1,4 @@
-﻿using Azure.Core;
-using System.Net;
-using UrlShortner.Models;
+﻿using UrlShortner.Models;
 using UrlShortner.Models.Entites;
 using UrlShortner.Reposerties;
 using UrlShortner.Utilites;
@@ -25,6 +23,7 @@ namespace UrlShortner.Services
                 return shortLink;
             var response = await _shortUrlRepoesirey.AddLink(link);
             return response;
+
         }
 
         public async Task RecordVisit(ShortLinkQuery query)
